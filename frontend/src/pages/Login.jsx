@@ -49,8 +49,8 @@ export default function Login() {
                 mx: "auto",
                 mb: 2,
                 bgcolor: "primary.main",
-                width: 56,
-                height: 56,
+                width: 60,
+                height: 60
               }}
             >
               <AccountCircle fontSize="large" />
@@ -69,7 +69,7 @@ export default function Login() {
           </Box>
 
           {/* Login Form */}
-          <Box component="form" noValidate>
+          <Box component="form" noValidate sx={{ p: 3 }}>
             <TextField
               fullWidth
               label="Email Address"
