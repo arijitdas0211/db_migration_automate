@@ -18,7 +18,7 @@ export default function Login() {
   }
 
   return (
-    <Container maxWidth="sm" sx={{ maxHeight: "100vh" }}>
+    <Container maxWidth="lg" sx={{ maxHeight: "100vh" }}>
       <Circle position={"fixed"} top={"78%"} right={"86%"} borderRadius={50} bgColor={"#ffc0cb7a"} />
       <Circle position={"fixed"} bottom={"65%"} left={"88%"} borderRadius={50} bgColor={"#2196f37a"} />
       <Box
