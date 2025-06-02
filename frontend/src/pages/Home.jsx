@@ -135,11 +135,11 @@ export default function Home() {
         <Grid container spacing={3}>
           {/* Sidebar */}
           <Grid item xs={12} md={4}>
-            <Stack spacing={3} boxShadow={5}>
+            <Stack spacing={3}>
               {/* Connection Form */}
               <Card>
                 <CardContent>
-                  <Typography variant="h5" fontWeight={600} sx={{ mb: 3 }} gutterBottom color="primary">
+                  <Typography variant="h5" fontWeight={600} sx={{ mb: 3, backgroundColor: '#e9e9e9', padding: '15px 20px' }} gutterBottom color="primary">
                     Database Connection
                   </Typography>
 
@@ -151,10 +151,9 @@ export default function Home() {
                         label="Server Environment"
                         onChange={(e) => setConnectionForm(prev => ({ ...prev, server: e.target.value }))}
                       >
-                        <MenuItem value="prod">Production Server</MenuItem>
-                        <MenuItem value="staging">Staging Server</MenuItem>
-                        <MenuItem value="dev">Development Server</MenuItem>
-                        <MenuItem value="test">Testing Server</MenuItem>
+                        <MenuItem value="mysql">MySQL</MenuItem>
+                        <MenuItem value="postgre">PostgreSQL</MenuItem>
+                        <MenuItem value="mssql">Ms-SQL</MenuItem>
                       </Select>
                     </FormControl>
 
@@ -288,7 +287,7 @@ export default function Home() {
           </Grid>
 
           {/* Main Content */}
-          <Grid item xs={12} md={8} boxShadow={5}>
+          <Grid item xs={12} md={8}>
             <Card>
               <CardContent>
                 {/* Header */}
