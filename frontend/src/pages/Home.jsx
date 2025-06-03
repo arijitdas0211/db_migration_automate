@@ -1,68 +1,83 @@
-import React, { useState } from "react";
-import { Box, Card, CardContent, Typography, TextField, Select, MenuItem, FormControl, InputLabel, Button, IconButton, InputAdornment, Chip, AppBar, Toolbar, Container, Alert, Stack, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Grid } from "@mui/material"; 
-import { DataGrid } from "@mui/x-data-grid"; 
-import { Visibility, VisibilityOff, Download, Storage, Assessment, ExitToApp, Person, Lock, CheckCircle, Warning, Info } from "@mui/icons-material";
-import Circle from "../components/Circle";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { 
+  Box, Card, CardContent, Typography, Button, Chip, Container, Alert, Stack, Dialog, DialogTitle, DialogContent, DialogContentText, DialogActions, Grid, Tabs, Tab
+} from "@mui/material"; 
+import { Warning, Info, Download, CheckCircle } from "@mui/icons-material";
+import DataTable from "../components/DataTable";
+import ConnectionForm from "../components/Connections";
+import Appbar from "../components/Appbar";
+import DBReportView from "../components/DBReportView";
+
 
 export default function Home() {
-  const navigate = useNavigate();
-  
-  const [connectionForm, setConnectionForm] = useState({
-    server: "",
-    database: "",
-    username: "",
-    password: ""
+  const [connectionForm, setConnectionForm] = useState({ 
+    server: "", database: "", username: "", password: "" 
   });
-  const [showPassword, setShowPassword] = useState(false);
   const [connected, setConnected] = useState(false);
   const [connecting, setConnecting] = useState(false);
-  const [assessmentRunning, setAssessmentRunning] = useState(false);
-  const [lastAssessment, setLastAssessment] = useState(null);
   const [logoutDialog, setLogoutDialog] = useState(false);
+  const [activeTab, setActiveTab] = useState(0);
 
-  // Sample data
-  const tableData = [
-    { id: 1, firstName: "John", lastName: "Smith", age: 35, department: "Engineering", status: "Active" },
-    { id: 2, firstName: "Sarah", lastName: "Johnson", age: 42, department: "Marketing", status: "Active" },
-    { id: 3, firstName: "Michael", lastName: "Brown", age: 28, department: "Sales", status: "Inactive" },
-    { id: 4, firstName: "Emily", lastName: "Davis", age: 31, department: "HR", status: "Active" },
-    { id: 5, firstName: "Robert", lastName: "Wilson", age: 45, department: "Finance", status: "Active" },
-    { id: 6, firstName: "Sarah", lastName: "Johnson", age: 50, department: "Marketing", status: "Inactive" },
-    { id: 7, firstName: "Emily", lastName: "Davis", age: 28, department: "HR", status: "Active" }
-  ];
+// Sample columns and data for different tabs
+  const columns = {
+    users: [
+      { field: "id", headerName: "#", width: '5%' },
+      { field: "firstName", headerName: "First Name", width: '20%' },
+      { field: "lastName", headerName: "Last Name", width: '20%' },
+      { field: "age", headerName: "Age", width: '10%', renderCell: ({ value }) => <Chip label={value} size="small" color="primary" /> },
+      { field: "department", headerName: "Department", width: '25%', renderCell: ({ value }) => <Chip label={value} size="small" variant="outlined" /> },
+      { field: "status", headerName: "Status", width: '20%', renderCell: ({ value }) => <Chip label={value} size="small" color={value === "Active" ? "success" : "warning"} /> }
+    ],
+    products: [
+      { field: "id", headerName: "#", width: '5%' },
+      { field: "name", headerName: "Product", width: '25%' },
+      { field: "category", headerName: "Category", width: '20%' },
+      { field: "price", headerName: "Price", width: '15%', renderCell: ({ value }) => `Rs.${value}` },
+      { field: "stock", headerName: "Stock", width: '15%', renderCell: ({ value }) => <Chip label={value} size="small" color={value < 100 ? "warning" : "success"} /> },
+      { field: "supplier", headerName: "Supplier", width: '20%' }
+    ],
+    analytics: [
+      { field: "id", headerName: "#", width: '5%' },
+      { field: "metric", headerName: "Metric", width: '30%' },
+      { field: "value", headerName: "Value", width: '20%' },
+      { field: "trend", headerName: "Trend", width: '20%', renderCell: ({ value }) => <Chip label={value} size="small" color={value === "Up" ? "success" : "info"} /> },
+      { field: "period", headerName: "Period", width: '25%' }
+    ]
+  };
 
-  const columns = [
-    { field: "id", headerName: "#", flex: 0.5 },
-    { field: "firstName", headerName: "First Name", flex: 1.5 },
-    { field: "lastName", headerName: "Last Name", flex: 1.5 },
-    { 
-      field: "age", 
-      headerName: "Age", 
-      flex: 1,
-      renderCell: ({ value }) => <Chip label={value} size="small" color="primary" />
-    },
-    { 
-      field: "department", 
-      headerName: "Department", 
-      flex: 1.5,
-      renderCell: ({ value }) => <Chip label={value} size="small" variant="outlined" />
-    },
-    { 
-      field: "status", 
-      headerName: "Status", 
-      flex: 1,
-      renderCell: ({ value }) => (
-        <Chip label={value} size="small" color={value === "Active" ? "success" : "warning"} />
-      )
-    }
-  ];
+  const tabData = {
+    users: [
+      { id: 1, firstName: "John", lastName: "Smith", age: 35, department: "Engineering", status: "Active" },
+      { id: 2, firstName: "Sarah", lastName: "Johnson", age: 42, department: "Marketing", status: "Active" },
+      { id: 3, firstName: "Michael", lastName: "Brown", age: 28, department: "Sales", status: "Inactive" },
+      { id: 4, firstName: "Emily", lastName: "Davis", age: 31, department: "HR", status: "Active" },
+      { id: 5, firstName: "Robert", lastName: "Wilson", age: 45, department: "Finance", status: "Active" },
+      { id: 6, firstName: "Lisa", lastName: "Anderson", age: 33, department: "IT", status: "Active" },
+      { id: 7, firstName: "David", lastName: "Taylor", age: 29, department: "Sales", status: "Inactive" },
+    ],
+    products: [
+      { id: 1, name: "Laptop", category: "Electronics", price: 999, stock: 50, supplier: "TechCorp" },
+      { id: 2, name: "Mouse", category: "Accessories", price: 29, stock: 200, supplier: "GadgetInc" },
+      { id: 3, name: "Keyboard", category: "Accessories", price: 79, stock: 150, supplier: "TechCorp" },
+      { id: 4, name: "Monitor", category: "Electronics", price: 299, stock: 75, supplier: "DisplayTech" },
+      { id: 5, name: "Webcam", category: "Electronics", price: 89, stock: 30, supplier: "TechCorp" },
+      { id: 6, name: "Headset", category: "Accessories", price: 59, stock: 120, supplier: "AudioPro" },
+    ],
+    analytics: [
+      { id: 1, metric: "Page Views", value: "15,420", trend: "Up", period: "This Month" },
+      { id: 2, metric: "Users", value: "3,240", trend: "Up", period: "This Month" },
+      { id: 3, metric: "Bounce Rate", value: "24.5%", trend: "Down", period: "This Month" },
+      { id: 4, metric: "Conversion", value: "4.2%", trend: "Up", period: "This Month" },
+      { id: 5, metric: "Revenue", value: "Rs.12,540", trend: "Up", period: "This Month" },
+    ]
+  };
+
+  const tabNames = Object.keys(columns)
+  const tabKeys = Object.keys(tabData);
 
   const handleConnect = async () => {
-    if (!connectionForm.server || !connectionForm.database || !connectionForm.username || !connectionForm.password) return;
-    
     setConnecting(true);
-    await new Promise(resolve => setTimeout(resolve, 2000));
+    await new Promise(resolve => setTimeout(resolve, 1500));
     setConnected(true);
     setConnecting(false);
   };
@@ -72,286 +87,70 @@ export default function Home() {
     setConnectionForm({ server: "", database: "", username: "", password: "" });
   };
 
-  const handleAssessment = async () => {
-    if (!connected) return;
-    
-    setAssessmentRunning(true);
-    await new Promise(resolve => setTimeout(resolve, 3000));
-    
-    setLastAssessment({
-      timestamp: new Date().toLocaleString(),
-      totalRecords: tableData.length,
-      issues: Math.floor(Math.random() * 5),
-      recommendations: Math.floor(Math.random() * 8) + 2
+  const handleExportExcel = () => {
+    // Create combined data for all tabs
+    let csvContent = "";
+    Object.entries(tabData).forEach(([tabName, data], index) => {
+      if (index > 0) csvContent += "\n\n";
+      csvContent += `=== ${tabName.toUpperCase()} ===\n`;
+      
+      const headers = columns[tabName].map(col => col.headerName);
+      csvContent += headers.join(",") + "\n";
+      
+      data.forEach(row => {
+        const values = columns[tabName].map(col => row[col.field] || "");
+        csvContent += values.join(",") + "\n";
+      });
     });
-    setAssessmentRunning(false);
-  };
-
-  const handleExportCSV = () => {
-    const headers = ["ID", "First Name", "Last Name", "Age", "Department", "Status"];
-    const csvContent = [
-      headers.join(","),
-      ...tableData.map(row => 
-        `${row.id},${row.firstName},${row.lastName},${row.age},${row.department},${row.status}`
-      )
-    ].join("\n");
 
     const blob = new Blob([csvContent], { type: "text/csv" });
     const url = window.URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = "Migration_Report.csv";
+    a.download = "Database_Export.csv";
     a.click();
     window.URL.revokeObjectURL(url);
   };
 
-  const isFormValid = () => {
-    return connectionForm.server && connectionForm.database && connectionForm.username && connectionForm.password;
-  };
+  const currentTabKey = tabKeys[activeTab];
 
   return (
-    <Container maxWidth="xl" sx={{ minHeight: "80vh" }}>
-      <Circle position={"fixed"} top={"78%"} right={"86%"} borderRadius={50} bgColor={"#ffc0cb42"} />
-      <Circle position={"fixed"} bottom={"65%"} left={"88%"} borderRadius={50} bgColor={"#2196f342"} />
-      
+    <Box sx={{ minHeight: "100vh", bgcolor: 'grey.50' }}>
       {/* AppBar */}
-      <AppBar position="fixed" sx={{ width: '96%', left: '50%', top: '2%', transform: 'translate(-50%, -2%)' }}>
-        <Toolbar>
-          <Storage sx={{ mr: 2 }} />
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Database Migration Console
-          </Typography>
-          
-          <Stack direction="row" spacing={2} alignItems="center">
-            {connected && <Chip icon={<CheckCircle />} label="Connected" color="success" size="small" />}
-            <Button color="inherit" startIcon={<ExitToApp />} onClick={() => setLogoutDialog(true)}>
-              Logout
-            </Button>
-          </Stack>
-        </Toolbar>
-      </AppBar>
+      <Appbar conStatus={connected} setLogoutDialogFunc={setLogoutDialog} setLogoutDialogStatus={true} />
 
-      <Container maxWidth="xl" sx={{ mt: 8, py: 4 }}>
+      <Container maxWidth="xl" sx={{ mt: 12 }}>
         <Grid container spacing={3}>
-          {/* Sidebar */}
-          <Grid item xs={12} md={4}>
-            <Stack spacing={3}>
-              {/* Connection Form */}
-              <Card>
-                <CardContent>
-                  <Typography variant="h5" fontWeight={600} sx={{ mb: 3, backgroundColor: '#e9e9e9', padding: '15px 20px' }} gutterBottom color="primary">
-                    Database Connection
-                  </Typography>
-
-                  <Stack spacing={2}>
-                    <FormControl fullWidth>
-                      <InputLabel>Server Environment</InputLabel>
-                      <Select
-                        value={connectionForm.server}
-                        label="Server Environment"
-                        onChange={(e) => setConnectionForm(prev => ({ ...prev, server: e.target.value }))}
-                      >
-                        <MenuItem value="mysql">MySQL</MenuItem>
-                        <MenuItem value="postgre">PostgreSQL</MenuItem>
-                        <MenuItem value="mssql">Ms-SQL</MenuItem>
-                      </Select>
-                    </FormControl>
-
-                    <FormControl fullWidth>
-                      <InputLabel>Database</InputLabel>
-                      <Select
-                        value={connectionForm.database}
-                        label="Database"
-                        onChange={(e) => setConnectionForm(prev => ({ ...prev, database: e.target.value }))}
-                      >
-                        <MenuItem value="users">User Management DB</MenuItem>
-                        <MenuItem value="products">Product Catalog DB</MenuItem>
-                        <MenuItem value="analytics">Analytics DB</MenuItem>
-                        <MenuItem value="inventory">Inventory DB</MenuItem>
-                      </Select>
-                    </FormControl>
-
-                    <TextField
-                      fullWidth
-                      label="Username"
-                      value={connectionForm.username}
-                      onChange={(e) => setConnectionForm(prev => ({ ...prev, username: e.target.value }))}
-                      slotProps={{
-                        input: {
-                          startAdornment: (
-                            <InputAdornment position="start">
-                              <Person />
-                            </InputAdornment>
-                          )
-                        }
-                      }}
-                    />
-
-                    <TextField
-                      fullWidth
-                      label="Password"
-                      type={showPassword ? "text" : "password"}
-                      value={connectionForm.password}
-                      onChange={(e) => setConnectionForm(prev => ({ ...prev, password: e.target.value }))}
-                      slotProps={{
-                        input: {
-                          startAdornment: (
-                            <InputAdornment position="start">
-                              <Lock />
-                            </InputAdornment>
-                          ),
-                          endAdornment: (
-                            <InputAdornment position="end">
-                              <IconButton onClick={() => setShowPassword(!showPassword)}>
-                                {showPassword ? <VisibilityOff /> : <Visibility />}
-                              </IconButton>
-                            </InputAdornment>
-                          )
-                        }
-                      }}
-                    />
-
-                    <Stack spacing={1}>
-                      {!connected ? (
-                        <Button
-                          variant="contained"
-                          fullWidth
-                          onClick={handleConnect}
-                          disabled={!isFormValid() || connecting}
-                        >
-                          {connecting ? "CONNECTING..." : "CONNECT"}
-                        </Button>
-                      ) : (
-                        <Button
-                          variant="outlined"
-                          fullWidth
-                          onClick={handleDisconnect}
-                          color="error"
-                        >
-                          DISCONNECT
-                        </Button>
-                      )}
-
-                      <Button
-                        variant="contained"
-                        fullWidth
-                        startIcon={<Assessment />}
-                        onClick={handleAssessment}
-                        disabled={!connected || assessmentRunning}
-                        color="warning"
-                      >
-                        {assessmentRunning ? "RUNNING..." : "RUN ASSESSMENT"}
-                      </Button>
-                    </Stack>
-                  </Stack>
-                </CardContent>
-              </Card>
-
-              {/* Assessment Results */}
-              {lastAssessment && (
-                <Card>
-                  <CardContent>
-                    <Typography variant="h6" gutterBottom color="warning.main">
-                      <Assessment sx={{ mr: 1, verticalAlign: "middle" }} />
-                      Last Assessment
-                    </Typography>
-
-                    <Stack spacing={1}>
-                      <Typography variant="body2" color="text.secondary">
-                        {lastAssessment.timestamp}
-                      </Typography>
-
-                      <Stack direction="row" justifyContent="space-between">
-                        <Typography variant="body2">Total Records:</Typography>
-                        <Chip label={lastAssessment.totalRecords} size="small" color="primary" />
-                      </Stack>
-
-                      <Stack direction="row" justifyContent="space-between">
-                        <Typography variant="body2">Issues Found:</Typography>
-                        <Chip 
-                          label={lastAssessment.issues} 
-                          size="small" 
-                          color={lastAssessment.issues > 0 ? "warning" : "success"} 
-                        />
-                      </Stack>
-
-                      <Stack direction="row" justifyContent="space-between">
-                        <Typography variant="body2">Recommendations:</Typography>
-                        <Chip label={lastAssessment.recommendations} size="small" color="info" />
-                      </Stack>
-                    </Stack>
-                  </CardContent>
-                </Card>
-              )}
-            </Stack>
+          {/* Connection Sidebar */}
+          <Grid item xs={12} lg={3}>
+            <ConnectionForm
+              form={connectionForm}
+              setForm={setConnectionForm}
+              connected={connected}
+              connecting={connecting}
+              onConnect={handleConnect}
+              onDisconnect={handleDisconnect}
+            />
           </Grid>
 
-          {/* Main Content */}
-          <Grid item xs={12} md={8}>
-            <Card>
-              <CardContent>
-                {/* Header */}
-                <Stack direction="row" justifyContent="space-between" alignItems="flex-start" sx={{ mb: 3 }}>
-                  <Box>
-                    <Typography variant="h5" fontWeight={600} color="primary" gutterBottom>
-                      Data Overview
-                    </Typography>
-                    <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-                      Manage and export your database records
-                    </Typography>
-                    
-                    <Stack direction="row" spacing={1}>
-                      <Chip
-                        icon={connected ? <CheckCircle /> : <Warning />}
-                        label={connected ? `Connected to ${connectionForm.database}` : "Not Connected"}
-                        color={connected ? "success" : "warning"}
-                      />
-                      <Chip label={`${tableData.length} Records`} color="primary" variant="outlined" />
-                    </Stack>
-                  </Box>
-
-                  <Button
-                    variant="contained"
-                    startIcon={<Download />}
-                    onClick={handleExportCSV}
-                    disabled={!connected}
-                  >
-                    Export CSV
-                  </Button>
-                </Stack>
-
-                {/* Connection Alert */}
-                {!connected && (
-                  <Alert severity="info" icon={<Info />} sx={{ mb: 3 }}>
-                    Please establish a database connection to view and export data.
-                  </Alert>
-                )}
-
-                {/* Data Grid */}
-                <Box sx={{ width: "100%", minWidth: 1000, overflowX: 'auto' }}>
-                  <DataGrid
-                    disableColumnResize
-                    disableAutosize
-                    disableColumnFilter
-                    disableColumnSelector
-                    rows={tableData}
-                    columns={columns}
-                    initialState={{
-                      pagination: {
-                        paginationModel: { page: 0, pageSize: 5 }
-                      }
-                    }}
-                    pageSizeOptions={[5, 10, 25]}
-                    disableRowSelectionOnClick
-                  />
-                </Box>
-              </CardContent>
-            </Card>
+          {/* Main Content - Full width on mobile, rest of space on desktop */}
+          <Grid item xs={12} lg={9}>
+            <DBReportView conStatus={connected} 
+                          conForm={connectionForm} 
+                          tableData={tabData} 
+                          currTabKey={currentTabKey} 
+                          exportFile={handleExportExcel} 
+                          activeTab={activeTab} 
+                          setActiveTab={setActiveTab} 
+                          tabNames={tabNames} 
+                          tableCols={columns}
+            />
           </Grid>
         </Grid>
       </Container>
 
       {/* Logout Dialog */}
+      {!connected ? '' : (
       <Dialog open={logoutDialog} onClose={() => setLogoutDialog(false)}>
         <DialogTitle>Confirm Logout</DialogTitle>
         <DialogContent>
@@ -365,15 +164,15 @@ export default function Home() {
             onClick={() => {
               setLogoutDialog(false);
               handleDisconnect();
-              navigate("/login");
             }}
-            color="error"
+            color="error" 
             variant="contained"
           >
             Logout
           </Button>
         </DialogActions>
       </Dialog>
-    </Container>
+      )}
+    </Box>
   );
 }
