@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "data": [
+    {
+      "host": "localhost",
+      "services": [
+        {
+          "type": "MySQL",
+          "databases": []
+        },
+        {
+          "type": "PostgreSQL",
+          "databases": []
+        },
+        {
+          "type": "MongoDB",
+          "databases": ["admin", "config", "local"]
+        },
+        {
+          "type": "SQL Server",
+          "databases": [
+            "master",
+            "tempdb",
+            "model",
+            "msdb",
+            "AdventureWorks2016"
+          ]
+        }
+      ]
+    }
+  ],
+  "message": "Database server check completed."
+}
+

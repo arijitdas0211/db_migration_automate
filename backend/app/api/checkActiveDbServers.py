@@ -1,43 +1,88 @@
 import socket
+import mysql.connector
+import psycopg2
+from pymongo import MongoClient
+import pyodbc
 
-HOSTS_TO_CHECK = [
-    "localhost",          # your own computer
-    "192.168.1.10",       # example IP on your local network
-    "192.168.1.25"        # another example
-]
+class CheckServer:
+    HOSTS_TO_CHECK = ['localhost']
 
-DB_PORTS = {
-    "MySQL": 3306,
-    "PostgreSQL": 5432,
-    "SQL Server": 1433,
-    "MongoDB": 27017,
-    "Oracle": 1521,
-    "Redis": 6379
-}
-
-def check_host_for_databases(host):
-    print(f"\nChecking {host}...")
-    open_ports = []
-    for db_name, port in DB_PORTS.items():
+    # Check if a port is open on a host
+    def is_port_open(self, host, port):
         try:
-            with socket.create_connection((host, port), timeout=0.5):
-                open_ports.append((db_name, port))
-        except (socket.error, OSError):
-            continue
-    return (host, open_ports) if open_ports else None
+            with socket.create_connection((host, port), timeout=1):
+                return True
+        except:
+            return False
 
-results = []
-for host in HOSTS_TO_CHECK:
-    result = check_host_for_databases(host)
-    if result:
-        results.append(result)
+    # List MySQL databases
+    def list_mysql_databases(self, host):
+        try:
+            conn = mysql.connector.connect(host=host, user='root', password='')
+            cursor = conn.cursor()
+            cursor.execute("SHOW DATABASES")
+            databases = [db[0] for db in cursor.fetchall()]
+            cursor.close()
+            conn.close()
+            return {'status': 'success', 'databases': databases}
+        except Exception as e:
+            return {'status': 'error', 'message': str(e)}
 
-if results:
-    print("\n✅ Found database servers:")
-    for host, ports in results:
-        print(f"\n📍 {host} is running:")
-        for db_name, port in ports:
-            print(f"  -> {db_name} on port {port}")
-else:
-    print("\n❌ No database servers found running.")
+    # List Postgres databases
+    def list_postgres_databases(self, host):
+        try:
+            conn = psycopg2.connect(dbname='postgres', user='postgres', password='1234', host=host)
+            cursor = conn.cursor()
+            cursor.execute("SELECT datname FROM pg_database WHERE datistemplate = false;")
+            databases = [db[0] for db in cursor.fetchall()]
+            cursor.close()
+            conn.close()
+            return {'status': 'success', 'databases': databases}
+        except Exception as e:
+            return {'status': 'error', 'message': str(e)}
+
+    # List MongoDb databases
+    def list_mongodb_databases(self, host):
+        try:
+            client = MongoClient(host, 27017)
+            return {'status': 'success', 'databases': client.list_database_names()}
+        except Exception as e:
+            return {'status': 'error', 'message': str(e)}
+
+    # List SQLServer databases
+    def list_sqlserver_databases(self, host):
+        try:
+            conn = pyodbc.connect(f'DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={host},1433;UID=sa;PWD=1234')
+            cursor = conn.cursor()
+            cursor.execute("SELECT name FROM sys.databases")
+            databases = [row[0] for row in cursor.fetchall()]
+            cursor.close()
+            conn.close()
+            return {'status': 'success', 'databases': databases}
+        except Exception as e:
+            return {'status': 'error', 'message': str(e)}
+        
+
+    def check_host_for_databases(self, host):
+        db_services = []
+
+        db_checks = [
+            {'type': 'MySQL', 'port': 3306, 'checker': self.list_mysql_databases},
+            {'type': 'PostgreSQL', 'port': 5432, 'checker': self.list_postgres_databases},
+            {'type': 'MongoDB', 'port': 27017, 'checker': self.list_mongodb_databases},
+            {'type': 'SQL Server', 'port': 1433, 'checker': self.list_sqlserver_databases},
+        ]
+
+        for db in db_checks:
+            if self.is_port_open(host, db['port']):
+                result = db['checker'](host)
+                db_services.append({
+                    'type': db['type'],
+                    'databases': result.get('databases', [])
+                })
+
+        return {
+            'host': host,
+            'services': db_services
+        }
 

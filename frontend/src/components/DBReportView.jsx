@@ -1,31 +1,6 @@
-import {
-  CheckCircle,
-  Download,
-  Info,
-  Warning,
-  TableChart,
-  Timeline,
-} from "@mui/icons-material";
-import {
-  Alert,
-  Box,
-  Button,
-  Card,
-  CardContent,
-  CardHeader,
-  Chip,
-  Divider,
-  Fade,
-  Grid,
-  Paper,
-  Stack,
-  Tab,
-  Tabs,
-  Typography,
-  useTheme,
-  alpha,
-} from "@mui/material";
-import DataTable from "./DataTable";
+import { CheckCircle, Download, Info, Warning, TableChart, Timeline } from "@mui/icons-material";
+import { Alert, Box, Button, Card, CardContent, CardHeader, Chip, Divider, Fade, Grid, Paper, Stack, Tab, Tabs, Typography, useTheme, alpha } from "@mui/material"; 
+import DataTable from "./DataTable"; 
 import titleCase from "../components/TitleCase";
 
 export default function DBReportView({
@@ -36,6 +11,7 @@ export default function DBReportView({
   exportFile,
   activeTab,
   setActiveTab,
+  dbName,
   tabNames,
   tableCols,
 }) {
@@ -53,7 +29,7 @@ export default function DBReportView({
         bgcolor: "grey.50",
         minHeight: "100vh",
         width: "100%",
-        minWidth: "1000px",
+        minWidth: "900px",
         mt: 1,
       }}
     >
@@ -110,7 +86,7 @@ export default function DBReportView({
                     fontWeight="medium"
                   >
                     {conStatus
-                      ? `Connected to ${conForm.database}`
+                      ? `Connected to ${dbName}`
                       : "Not Connected"}
                   </Typography>
                 </Box>
