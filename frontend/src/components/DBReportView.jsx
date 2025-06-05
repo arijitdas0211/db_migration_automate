@@ -11,26 +11,6 @@ export default function DBReportView({ conStatus, dbName, queryData }) {
   // From Home Comp transferred
   const { handleExportExcel } = useExport();
   const [activeTab, setActiveTab] = useState(0);
-  
-  // Sample data - in real app this would come from API
-  // Construct columns object properly
-  // const columns = {
-  //   TYPE_TABLE: [
-  //     { field: "id", headerName: "#", width: "5%" },
-  //     { field: "firstName", headerName: "First Name", width: "20%" },
-  //     { field: "lastName", headerName: "Last Name", width: "20%" },
-  //   ]
-  // };
-  
-  // const mockData = {
-  //   columns: columns,
-  //   tabData: {
-  //     TYPE_TABLE: [
-  //       { id: 1, firstName: "John", lastName: "Smith" },
-  //       { id: 2, firstName: "Sarah", lastName: "Johnson" }
-  //     ]
-  //   }
-  // };
 
   const { columns, tabData } = extractDataFromQuerySet(queryData);
 

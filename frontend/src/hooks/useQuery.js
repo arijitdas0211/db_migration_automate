@@ -1,8 +1,26 @@
 // Helper function to format field names to readable header names
 function formatHeaderName(fieldKey) {
+  // Handle special cases or create a mapping for known fields
+  const fieldMappings = {
+    hasspecialcharsorlongname: "Has Special Chars Or Long Name",
+    name: "Name",
+    id: "ID",
+    rowguid: "Row GUID",
+    modifieddate: "Modified Date",
+    createddate: "Created Date",
+  };
+
+  // Check if we have a predefined mapping
+  const lowerKey = fieldKey.toLowerCase();
+  if (fieldMappings[lowerKey]) {
+    return fieldMappings[lowerKey];
+  }
+
+  // Default formatting for other fields
   return fieldKey
     .replace(/([a-z])([A-Z])/g, "$1 $2") // camelCase to spaces
     .replace(/_/g, " ") // underscores to spaces
+    .toLowerCase() // convert to lowercase first
     .replace(/\b\w/g, (l) => l.toUpperCase()); // capitalize first letter of each word
 }
 
@@ -18,38 +36,40 @@ export function extractDataFromQuerySet(querySet) {
   const tabData = {};
 
   querySet.forEach((item) => {
-    // Convert label to uppercase for key (e.g., "type_table" -> "TYPE_TABLE")
-    const key = item.label.toUpperCase();
+    const rawKey = item.label;
+    const formattedTabKey = formatHeaderName(rawKey);
 
-    // Auto-generate columns based on the actual data structure
     if (item.rows.length > 0) {
       const firstRow = item.rows[0];
       const rowKeys = Object.keys(firstRow);
 
-      columns[key] = [
+      // Build formatted columns
+      columns[formattedTabKey] = [
         { field: "id", headerName: "#", width: "5%" },
-        ...rowKeys.map((fieldKey) => ({
-          field: fieldKey,
-          headerName: formatHeaderName(fieldKey),
+        ...rowKeys.map((rawFieldKey) => ({
+          field: formatHeaderName(rawFieldKey),
+          headerName: formatHeaderName(rawFieldKey),
           width: calculateColumnWidth(rowKeys.length),
         })),
       ];
-    } else {
-      // Default columns for empty data
-      columns[key] = [
-        { field: "id", headerName: "#", width: "10%" },
-        { field: "message", headerName: "Message", width: "90%" },
-      ];
-    }
 
-    // Extract tabData - add id to each row
-    if (item.rows.length > 0) {
-      tabData[key] = item.rows.map((row, index) => ({
-        id: index + 1,
-        ...row,
-      }));
+      // Format both keys and string values
+      tabData[formattedTabKey] = item.rows.map((rawRow, index) => {
+        const formattedRow = { id: index + 1 };
+        for (const key in rawRow) {
+          const formattedKey = formatHeaderName(key);
+          const value = rawRow[key];
+          formattedRow[formattedKey] =
+            typeof value === "string" ? formatHeaderName(value) : value;
+        }
+        return formattedRow;
+      });
     } else {
-      tabData[key] = [{ id: 1, message: "No data available" }];
+      columns[formattedTabKey] = [
+        { field: "id", headerName: "#", width: "10%" },
+        { field: "Message", headerName: "Message", width: "90%" },
+      ];
+      tabData[formattedTabKey] = [{ id: 1, Message: "No Data Available" }];
     }
   });
 
