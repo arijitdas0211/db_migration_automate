@@ -1,9 +1,9 @@
-import { Lock, Person, Visibility, VisibilityOff, Storage, Computer, CheckCircle, Error, Cable } from "@mui/icons-material"; 
+import { Lock, Person, Visibility, VisibilityOff, Storage, Computer, CheckCircle, Error, Cable, Assessment } from "@mui/icons-material"; 
 import { Button, Card, CardContent, FormControl, IconButton, InputAdornment, InputLabel, MenuItem, Select, Stack, TextField, Typography, Box, Chip, Alert, Divider, LinearProgress, Paper } from "@mui/material"; 
 import { useState } from "react";
 
 // Connection Form Component
-export default function ConnectionForm({ form, setForm, connected, connecting, onConnect, onDisconnect, servers, error }) {
+export default function ConnectionForm({ form, setForm, connected, connecting, onConnect, onDisconnect, servers, error, handleAssessment }) {
   const [showPassword, setShowPassword] = useState(false);
   const [selectedServer, setSelectedServer] = useState(""); // "MySQL", "PostgreSQL", etc.
   const [databases, setDatabases] = useState([]); // Populated based on selectedServer
@@ -16,7 +16,7 @@ export default function ConnectionForm({ form, setForm, connected, connecting, o
     setDatabases(serverEntry ? serverEntry.databases : []);
   };
   
-  const isValid = form.server && form.database && form.username && form.password;
+  const isValid = form.server && form.database;
 
   return (
     <Card
@@ -241,7 +241,7 @@ export default function ConnectionForm({ form, setForm, connected, connecting, o
 
           <Divider sx={{ my: 1 }} />
 
-          {/* Action Button */}
+          {/* Action Buttons */}
           {!connected ? (
             <Button
               variant="contained"
@@ -260,27 +260,50 @@ export default function ConnectionForm({ form, setForm, connected, connecting, o
               {connecting ? "Connecting..." : "Connect to Database"}
             </Button>
           ) : (
-            <Button
-              variant="outlined"
-              size="large"
-              fullWidth
-              onClick={onDisconnect}
-              color="error"
-              sx={{
-                py: 1.5,
-                fontWeight: 600,
-                textTransform: "none",
-                fontSize: "1rem",
-                borderRadius: 2,
-                borderWidth: 2,
-                "&:hover": {
+            <Stack spacing={1.5}>
+              <Button
+                variant="contained"
+                size="large"
+                fullWidth
+                onClick={handleAssessment}
+                startIcon={<Assessment />}
+                sx={{
+                  py: 1.5,
+                  fontWeight: 600,
+                  textTransform: "none",
+                  fontSize: "1rem",
+                  borderRadius: 2,
+                  bgcolor: "primary.main",
+                  "&:hover": {
+                    bgcolor: "primary.dark",
+                    transform: "translateY(-1px)",
+                  },
+                }}
+              >
+                Run Assessment
+              </Button>
+              <Button
+                variant="outlined"
+                size="large"
+                fullWidth
+                onClick={onDisconnect}
+                color="error"
+                sx={{
+                  py: 1.5,
+                  fontWeight: 600,
+                  textTransform: "none",
+                  fontSize: "1rem",
+                  borderRadius: 2,
                   borderWidth: 2,
-                  transform: "translateY(-1px)",
-                },
-              }}
-            >
-              Disconnect
-            </Button>
+                  "&:hover": {
+                    borderWidth: 2,
+                    transform: "translateY(-1px)",
+                  },
+                }}
+              >
+                Disconnect
+              </Button>
+            </Stack>
           )}
 
           {/* Validation Alert */}

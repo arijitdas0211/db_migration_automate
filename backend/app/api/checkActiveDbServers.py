@@ -18,7 +18,7 @@ class CheckServer:
     # List MySQL databases
     def list_mysql_databases(self, host):
         try:
-            conn = mysql.connector.connect(host=host, user='root', password='')
+            conn = mysql.connector.connect(host=host, user='root', password='1234')
             cursor = conn.cursor()
             cursor.execute("SHOW DATABASES")
             databases = [db[0] for db in cursor.fetchall()]
