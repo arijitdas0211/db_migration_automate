@@ -27,9 +27,9 @@ export default function DBReportView({ conStatus, dbName, queryData }) {
   
   // From Home Comp transferred
 
-  const currentRecordCount = tableData[currentTabKey]?.length || 0;
+  const currentRecordCount = tableData[currentTabKey]?.length > 1 ? tableData[currentTabKey]?.length : 0;
   const totalRecords = Object.values(tableData).reduce(
-    (sum, data) => sum + (data?.length || 0),
+    (sum, data) => sum + (data?.length > 1 ? data?.length : 0),
     0
   );
 

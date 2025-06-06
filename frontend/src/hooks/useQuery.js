@@ -59,8 +59,7 @@ export function extractDataFromQuerySet(querySet) {
         for (const key in rawRow) {
           const formattedKey = formatHeaderName(key);
           const value = rawRow[key];
-          formattedRow[formattedKey] =
-            typeof value === "string" ? formatHeaderName(value) : value;
+          formattedRow[formattedKey] = typeof value === "string" ? formatHeaderName(value) : value;
         }
         return formattedRow;
       });

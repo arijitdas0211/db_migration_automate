@@ -3,7 +3,7 @@ import { Button, Card, CardContent, FormControl, IconButton, InputAdornment, Inp
 import { useState } from "react";
 
 // Connection Form Component
-export default function ConnectionForm({ form, setForm, connected, connecting, onConnect, onDisconnect, servers, error, handleAssessment }) {
+export default function ConnectionForm({ form, setForm, connected, connecting, onConnect, onDisconnect, servers, error }) {
   const [showPassword, setShowPassword] = useState(false);
   const [selectedServer, setSelectedServer] = useState(""); // "MySQL", "PostgreSQL", etc.
   const [databases, setDatabases] = useState([]); // Populated based on selectedServer
@@ -261,27 +261,6 @@ export default function ConnectionForm({ form, setForm, connected, connecting, o
             </Button>
           ) : (
             <Stack spacing={1.5}>
-              <Button
-                variant="contained"
-                size="large"
-                fullWidth
-                onClick={handleAssessment}
-                startIcon={<Assessment />}
-                sx={{
-                  py: 1.5,
-                  fontWeight: 600,
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  borderRadius: 2,
-                  bgcolor: "primary.main",
-                  "&:hover": {
-                    bgcolor: "primary.dark",
-                    transform: "translateY(-1px)",
-                  },
-                }}
-              >
-                Run Assessment
-              </Button>
               <Button
                 variant="outlined"
                 size="large"

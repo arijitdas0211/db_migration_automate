@@ -39,8 +39,15 @@ class Queries:
             },
             {
                 "label": "unique_constraint",
-                "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%\_%' ESCAPE '\'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.key_constraints where type='uq'
+                # For this query getting error at console
+                "query": """    
+                    SELECT name,
+                        CASE WHEN name LIKE '% %' OR name LIKE '%#%' OR name LIKE '%(%' OR name LIKE '%.%' OR 
+                                    name LIKE '%[%' OR name LIKE '%]%' OR name LIKE '%\\_%' ESCAPE '\\' OR LEN(name) > 63
+                            THEN 'yes' ELSE 'no' 
+                        END AS HasSpecialCharsOrlongname
+                        FROM sys.key_constraints 
+                        WHERE type = 'uq'
                 """,
                 "type": "SQL Server"
             },

@@ -73,7 +73,7 @@ export function useExport() {
 
       XLSX.writeFile(
         workbook,
-        `Migration_Analysis_${new Date().toISOString().split("T")[0]}.xlsx`
+        `Migration_Analysis_${new Date().toLocaleDateString()}_${new Date().toLocaleTimeString().split("T")[0]}.xlsx`
       );
     } catch (error) {
       console.error("Error exporting Excel file:", error);

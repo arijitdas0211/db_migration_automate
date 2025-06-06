@@ -48,21 +48,20 @@ export default function DataTable({ data = [], columns = [], title = "" }) {
   const paginatedData = data.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage);
 
   // Render cell content with proper error handling
-  const renderCellContent = (column, value) => {
-    if (column.renderCell && typeof column.renderCell === 'function') {
+  const renderCellContent = (column, value, row) => {
+    if (column.renderCell && typeof column.renderCell === "function") {
       try {
-        return column.renderCell({ value });
+        return column.renderCell({ value, row });
       } catch (error) {
-        console.error('Error rendering cell:', error);
-        return <span style={{ color: 'red' }}>Error</span>;
+        console.error("Error rendering cell:", error);
+        return <span style={{ color: "red" }}>Error</span>;
       }
     }
-    
-    // Handle null/undefined values
+
     if (value === null || value === undefined) {
-      return <span style={{ color: '#999', fontStyle: 'italic' }}>-</span>;
+      return <span style={{ color: "#999", fontStyle: "italic" }}>-</span>;
     }
-    
+
     return value;
   };
 
@@ -108,19 +107,33 @@ export default function DataTable({ data = [], columns = [], title = "" }) {
                 </TableCell>
               </TableRow>
             ) : (
-              // Data rows
-              paginatedData.map((row, index) => (
-                <TableRow key={row.id || index} hover>
-                  {columns.map((col) => (
-                    <TableCell
-                      key={col.field}
-                      sx={{ width: col.width || "auto" }}
-                    >
-                      {renderCellContent(col, row[col.field])}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
+              // Data rows with red background if any cell value is "no"
+              paginatedData.map((row, index) => {
+                const hasNoValue = Object.values(row).some(
+                  (val) => typeof val === "string" && val.toLowerCase() === "no"
+                );
+
+                return (
+                  <TableRow
+                    key={row.id || index}
+                    sx={{ 
+                      backgroundColor: hasNoValue ? "#ff7961" : "inherit"
+                     }}
+                  >
+                    {columns.map((col) => (
+                      <TableCell
+                        key={col.field}
+                        sx={{
+                          width: col.width || "auto",
+                          color: hasNoValue ? "#000000" : "inherit"
+                        }}
+                      >
+                        {renderCellContent(col, row[col.field], row)}
+                      </TableCell>
+                    ))}
+                  </TableRow>
+                );
+              })
             )}
           </TableBody>
         </Table>
@@ -141,4 +154,3 @@ export default function DataTable({ data = [], columns = [], title = "" }) {
     </Box>
   );
 }
-

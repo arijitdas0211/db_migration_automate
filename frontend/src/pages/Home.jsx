@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <Box sx={{ minHeight: "100vh", bgcolor: "grey.50" }}>
+    <Box sx={{ minHeight: "80vh", bgcolor: "grey.50" }}>
       <Appbar
         conStatus={connected}
         setLogoutDialogFunc={setLogoutDialog}
