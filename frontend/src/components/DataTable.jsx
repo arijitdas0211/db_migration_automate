@@ -117,7 +117,7 @@ export default function DataTable({ data = [], columns = [], title = "" }) {
                   <TableRow
                     key={row.id || index}
                     sx={{ 
-                      backgroundColor: hasNoValue ? "#ff7961" : "inherit"
+                      
                      }}
                   >
                     {columns.map((col) => (
@@ -125,10 +125,13 @@ export default function DataTable({ data = [], columns = [], title = "" }) {
                         key={col.field}
                         sx={{
                           width: col.width || "auto",
-                          color: hasNoValue ? "#000000" : "inherit"
+                          color: hasNoValue ? "#FFFFFF" : "inherit", 
+                          
                         }}
                       >
-                        {renderCellContent(col, row[col.field], row)}
+                        <span style={{ backgroundColor: hasNoValue ? "#ff684d" : "inherit", padding: '5px 10px', borderRadius: 15 }}>
+                          {renderCellContent(col, row[col.field], row)}
+                        </span>
                       </TableCell>
                     ))}
                   </TableRow>

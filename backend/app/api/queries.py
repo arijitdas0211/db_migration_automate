@@ -39,7 +39,7 @@ class Queries:
             },
             {
                 "label": "unique_constraint",
-                # For this query getting error at console
+                # For this query it was getting error at console
                 "query": """    
                     SELECT name,
                         CASE WHEN name LIKE '% %' OR name LIKE '%#%' OR name LIKE '%(%' OR name LIKE '%.%' OR 

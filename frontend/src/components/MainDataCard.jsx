@@ -5,7 +5,7 @@ import DataTableContainer from "./DataTableContainer";
 
 export default function MainDataCard({
   conStatus,
-  currentRecordCount,
+  // currentRecordCount,
   tabNames,
   tableData,
   activeTab,
@@ -30,7 +30,7 @@ export default function MainDataCard({
               variant="contained"
               startIcon={<Download />}
               onClick={onExport}
-              disabled={!conStatus || currentRecordCount === 0}
+              disabled={!conStatus}
               sx={{
                 borderRadius: 2,
                 textTransform: "none",
@@ -47,7 +47,7 @@ export default function MainDataCard({
 
       <Divider />
 
-      <CardContent sx={{ p: 0 }}>
+      <CardContent sx={{ p: 0, overflowX: 'auto' }}>
         {conStatus && (
           <DataTabs
             tabNames={tabNames}

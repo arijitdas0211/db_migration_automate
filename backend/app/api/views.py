@@ -49,6 +49,17 @@ def validate_and_assess(request):
     username = data.get("username")
     password = data.get("password")
     db_type = data.get("type")
+    
+    # DRF Test Data:
+    '''
+    {
+        "host": "localhost",
+        "database": "AdventureWorks2016",
+        "username": "sa",
+        "password": "1234",
+        "type": "SQL Server"
+    }
+    '''
 
     try:
         conn = None

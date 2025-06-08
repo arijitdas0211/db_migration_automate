@@ -65,10 +65,10 @@ export function extractDataFromQuerySet(querySet) {
       });
     } else {
       columns[formattedTabKey] = [
-        { field: "id", headerName: "#", width: "10%" },
+        // { field: "id", headerName: "#", width: "10%" },
         { field: "Message", headerName: "Message", width: "90%" },
       ];
-      tabData[formattedTabKey] = [{ id: 1, Message: "No Data Available" }];
+      tabData[formattedTabKey] = [{ Message: "No Data Available" }];
     }
   });
 

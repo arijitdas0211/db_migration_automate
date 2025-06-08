@@ -46,7 +46,7 @@ export default function DBReportView({ conStatus, dbName, queryData }) {
         bgcolor: "grey.50",
         minHeight: "100vh",
         width: 1,
-        minWidth: "60vw",
+        maxWidth: "60vw",
         mt: 1,
       }}
     >

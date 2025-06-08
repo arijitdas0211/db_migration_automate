@@ -13,7 +13,7 @@ export default function DataTabs({ tabNames, tableData, activeTab, setActiveTab 
         sx={{
           "& .MuiTab-root": {
             textTransform: "none",
-            fontSize: "1rem",
+            fontSize: "0.5rem",
             fontWeight: "medium",
             minHeight: 64,
             "&:hover": {
