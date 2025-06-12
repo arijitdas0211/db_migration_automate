@@ -5,6 +5,14 @@ from .checkActiveDbServers import CheckServer
 import pymysql, psycopg2, pymongo, pyodbc
 # Validation queries
 from .queries import Queries
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.http import JsonResponse
+
+@ensure_csrf_cookie
+def get_csrf_token(request):
+    return JsonResponse({'message': 'CSRF cookie set'})
+
+
 
 @api_view(['GET'])
 def check_active_db_servers(request):

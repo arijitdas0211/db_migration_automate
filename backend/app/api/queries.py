@@ -5,35 +5,35 @@ class Queries:
             {
                 "label": "type_table",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.table_types
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.table_types
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "default_constraint",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.default_constraints
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.default_constraints
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "sql_scalar_function",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR  name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.objects where type='fn'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR  name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.objects where type='fn'
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "primary_key_constraint",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.key_constraints where type='pk'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.key_constraints where type='pk'
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "sql_store_procedure",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.procedures where type='p'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.procedures where type='p'
                 """,
                 "type": "SQL Server"
             },
@@ -45,7 +45,7 @@ class Queries:
                         CASE WHEN name LIKE '% %' OR name LIKE '%#%' OR name LIKE '%(%' OR name LIKE '%.%' OR 
                                     name LIKE '%[%' OR name LIKE '%]%' OR name LIKE '%\\_%' ESCAPE '\\' OR LEN(name) > 63
                             THEN 'yes' ELSE 'no' 
-                        END AS HasSpecialCharsOrlongname
+                        END AS Has_Special_Chars_Or_long_name
                         FROM sys.key_constraints 
                         WHERE type = 'uq'
                 """,
@@ -54,37 +54,50 @@ class Queries:
             {
                 "label": "check_constraint",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.check_constraints where type='c'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.check_constraints where type='c'
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "sql_trigger",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.triggers where parent_id<>0
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.triggers where parent_id<>0
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "sql_table_valued_function",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.objects where type='tf'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.objects where type='tf'
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "foreign_key_constraint",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname FROM sys.foreign_keys where type='f'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.foreign_keys where type='f'
                 """,
                 "type": "SQL Server"
             },
             {
                 "label": "user_table",
                 "query": """
-                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS HasSpecialCharsOrlongname from sys.tables WHERE type = 'u'
+                    SELECT name,CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%[_]%'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name from sys.tables WHERE type = 'u'
                 """,
                 "type": "SQL Server"
             },
+            {
+                "label": "schemas",
+                "query": """
+                    SELECT name, CASE WHEN name LIKE '% %' OR  name LIKE '%#%' OR  name LIKE '%(%' OR  name LIKE '%.%' OR name LIKE '%[%' OR name LIKE '%]%' OR  name LIKE '%\\_%' ESCAPE '\\'  OR  LEN(name) > 63 THEN 'yes' ELSE 'no' END AS Has_Special_Chars_Or_long_name FROM sys.schemas where schema_id=1 or (schema_id>4 and schema_id<16384)
+                """,
+                "type": "SQL Server"
+            }
+            # {
+            #     "label": "summary",
+            #     "query": """
+            #             select type_desc, type, count(*) from sys.objects group by type_desc, type;
+            #     """
+            # }
         ]
 

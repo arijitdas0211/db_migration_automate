@@ -1,0 +1,1665 @@
+[
+  { "label": "type_table", "rowCount": 0, "yes": 0, "no": 0, "rows": [] },
+  {
+    "label": "default_constraint",
+    "rowCount": 155,
+    "yes": 155,
+    "no": 0,
+    "rows": [
+      { "name": "DF_Person_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_SalesTaxRate_TaxRate", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_SalesTaxRate_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesTaxRate_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PersonCreditCard_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PersonPhone_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesTerritory_SalesYTD",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesTerritory_SalesLastYear",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PhoneNumberType_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesTerritory_CostYTD",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesTerritory_CostLastYear",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Product_MakeFlag", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesTerritory_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Product_FinishedGoodsFlag",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesTerritory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Product_rowguid", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_Product_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesTerritoryHistory_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesTerritoryHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ScrapReason_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Shift_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_ProductCategory_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_ShipMethod_ShipBase", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_ProductCategory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_ShipMethod_ShipRate", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_ShipMethod_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_ProductCostHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ShipMethod_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductDescription_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ShoppingCartItem_Quantity",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductDescription_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ShoppingCartItem_DateCreated",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ShoppingCartItem_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductDocument_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductInventory_Quantity",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SpecialOffer_DiscountPct",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductInventory_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_ErrorLog_ErrorTime", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_SpecialOffer_MinQty", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_ProductInventory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_SpecialOffer_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SpecialOffer_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductListPriceHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Address_rowguid", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_Address_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SpecialOfferProduct_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_ProductModel_rowguid", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_AddressType_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SpecialOfferProduct_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductModel_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_AddressType_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_StateProvince_IsOnlyStateProvinceFlag",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductModelIllustration_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_AWBuildVersion_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_StateProvince_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_StateProvince_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductModelProductDescriptionCulture_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BillOfMaterials_StartDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BillOfMaterials_PerAssemblyQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Store_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_ProductPhoto_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BillOfMaterials_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Store_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_ProductProductPhoto_Primary",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_TransactionHistory_ReferenceOrderLineID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductProductPhoto_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_TransactionHistory_TransactionDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_TransactionHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductReview_ReviewDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductReview_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BusinessEntity_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BusinessEntity_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_TransactionHistoryArchive_ReferenceOrderLineID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_TransactionHistoryArchive_TransactionDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductSubcategory_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BusinessEntityAddress_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_TransactionHistoryArchive_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductSubcategory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BusinessEntityAddress_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ProductVendor_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BusinessEntityContact_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_UnitMeasure_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_BusinessEntityContact_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF__emp__joiningdate__405A880E",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Vendor_PreferredVendorStatus",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_ContactType_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Vendor_ActiveFlag", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_Vendor_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_CountryRegionCurrency_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_CountryRegion_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_WorkOrder_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderDetail_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_CreditCard_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Culture_ModifiedDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_WorkOrderRouting_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Currency_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderHeader_RevisionNumber",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderHeader_Status",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_CurrencyRate_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderHeader_OrderDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderHeader_SubTotal",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Customer_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_PurchaseOrderHeader_TaxAmt",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Customer_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderHeader_Freight",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_PurchaseOrderHeader_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Department_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Document_FolderFlag", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_Document_ChangeNumber",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Document_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_Document_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderDetail_UnitPriceDiscount",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderDetail_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderDetail_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_EmailAddress_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_EmailAddress_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Employee_SalariedFlag",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Employee_VacationHours",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_RevisionNumber",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Employee_SickLeaveHours",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_OrderDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Employee_CurrentFlag", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesOrderHeader_Status",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Employee_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesOrderHeader_OnlineOrderFlag",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Employee_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_SubTotal",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_TaxAmt",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_Freight",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeader_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_EmployeeDepartmentHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_EmployeePayHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesOrderHeaderSalesReason_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF__employee__insert__70099B30",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_SalesPerson_Bonus", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_Illustration_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF__employee__insert__70FDBF69",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesPerson_CommissionPct",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_SalesPerson_SalesYTD", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_JobCandidate_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesPerson_SalesLastYear",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_SalesPerson_rowguid", "hasspecialcharsorlongname": "yes" },
+      { "name": "DF_Location_CostRate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesPerson_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Location_Availability",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_Location_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Password_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_Password_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesPersonQuotaHistory_rowguid",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "DF_SalesPersonQuotaHistory_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Person_NameStyle", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_Person_EmailPromotion",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "DF_Person_rowguid", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "DF_SalesReason_ModifiedDate",
+        "hasspecialcharsorlongname": "yes"
+      }
+    ]
+  },
+  {
+    "label": "sql_scalar_function",
+    "rowCount": 10,
+    "yes": 0,
+    "no": 10,
+    "rows": [
+      {
+        "name": "ufnGetAccountingStartDate",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "ufnGetAccountingEndDate", "hasspecialcharsorlongname": "no" },
+      { "name": "ufnGetProductDealerPrice", "hasspecialcharsorlongname": "no" },
+      { "name": "ufnGetProductListPrice", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "ufnGetProductStandardCost",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "ufnGetStock", "hasspecialcharsorlongname": "no" },
+      { "name": "ufnGetDocumentStatusText", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "ufnGetPurchaseOrderStatusText",
+        "hasspecialcharsorlongname": "no"
+      },
+      {
+        "name": "ufnGetSalesOrderStatusText",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "ufnLeadingZeros", "hasspecialcharsorlongname": "no" }
+    ]
+  },
+  {
+    "label": "primary_key_constraint",
+    "rowCount": 71,
+    "yes": 71,
+    "no": 0,
+    "rows": [
+      {
+        "name": "PK_SalesPerson_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesPersonQuotaHistory_BusinessEntityID_QuotaDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesReason_SalesReasonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesTaxRate_SalesTaxRateID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesTerritory_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesTerritoryHistory_BusinessEntityID_StartDate_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ScrapReason_ScrapReasonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "PK_Shift_ShiftID", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "PK_ShipMethod_ShipMethodID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ShoppingCartItem_ShoppingCartItemID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SpecialOffer_SpecialOfferID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SpecialOfferProduct_SpecialOfferID_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_StateProvince_StateProvinceID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Store_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_TransactionHistory_TransactionID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_TransactionHistoryArchive_TransactionID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_UnitMeasure_UnitMeasureCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Vendor_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_WorkOrder_WorkOrderID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_WorkOrderRouting_WorkOrderID_ProductID_OperationSequence",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "PK_ErrorLog_ErrorLogID", "hasspecialcharsorlongname": "yes" },
+      { "name": "PK_Address_AddressID", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "PK_AddressType_AddressTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_AWBuildVersion_SystemInformationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_BillOfMaterials_BillOfMaterialsID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_BusinessEntity_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_BusinessEntityAddress_BusinessEntityID_AddressID_AddressTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_BusinessEntityContact_BusinessEntityID_PersonID_ContactTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ContactType_ContactTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_CountryRegionCurrency_CountryRegionCode_CurrencyCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_CountryRegion_CountryRegionCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_CreditCard_CreditCardID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "PK_Culture_CultureID", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "PK_Currency_CurrencyCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_CurrencyRate_CurrencyRateID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "PK_Customer_CustomerID", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "PK_DatabaseLog_DatabaseLogID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Department_DepartmentID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Document_DocumentNode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_EmailAddress_BusinessEntityID_EmailAddressID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Employee_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_EmployeeDepartmentHistory_BusinessEntityID_StartDate_DepartmentID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_EmployeePayHistory_BusinessEntityID_RateChangeDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Illustration_IllustrationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_JobCandidate_JobCandidateID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "PK_Location_LocationID", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "PK_Password_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_Person_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_PersonCreditCard_BusinessEntityID_CreditCardID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_PersonPhone_BusinessEntityID_PhoneNumber_PhoneNumberTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_PhoneNumberType_PhoneNumberTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "PK_Product_ProductID", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "PK_ProductCategory_ProductCategoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductCostHistory_ProductID_StartDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductDescription_ProductDescriptionID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductDocument_ProductID_DocumentNode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductInventory_ProductID_LocationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductListPriceHistory_ProductID_StartDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductModel_ProductModelID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductModelIllustration_ProductModelID_IllustrationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductModelProductDescriptionCulture_ProductModelID_ProductDescriptionID_CultureID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductPhoto_ProductPhotoID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductProductPhoto_ProductID_ProductPhotoID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductReview_ProductReviewID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductSubcategory_ProductSubcategoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_ProductVendor_ProductID_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_PurchaseOrderDetail_PurchaseOrderID_PurchaseOrderDetailID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_PurchaseOrderHeader_PurchaseOrderID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesOrderDetail_SalesOrderID_SalesOrderDetailID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesOrderHeader_SalesOrderID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "PK_SalesOrderHeaderSalesReason_SalesOrderID_SalesReasonID",
+        "hasspecialcharsorlongname": "yes"
+      }
+    ]
+  },
+  {
+    "label": "sql_store_procedure",
+    "rowCount": 13,
+    "yes": 2,
+    "no": 11,
+    "rows": [
+      { "name": "uspGetBillOfMaterials", "hasspecialcharsorlongname": "no" },
+      { "name": "uspGetEmployeeManagers", "hasspecialcharsorlongname": "no" },
+      { "name": "uspGetManagerEmployees", "hasspecialcharsorlongname": "no" },
+      { "name": "uspGetWhereUsedProductID", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "uspUpdateEmployeeHireInfo",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "uspUpdateEmployeeLogin", "hasspecialcharsorlongname": "no" },
+      { "name": "uspPrintError", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "uspUpdateEmployeePersonalInfo",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "uspLogError", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "uspSearchCandidateResumes",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "getorderdetails", "hasspecialcharsorlongname": "no" },
+      { "name": "insert_employee", "hasspecialcharsorlongname": "yes" },
+      { "name": "generate_column_script", "hasspecialcharsorlongname": "yes" }
+    ]
+  },
+  {
+    "label": "unique_constraint",
+    "rowCount": 1,
+    "yes": 1,
+    "no": 0,
+    "rows": [
+      {
+        "name": "UQ__Document__F73921F744672977",
+        "hasspecialcharsorlongname": "yes"
+      }
+    ]
+  },
+  {
+    "label": "check_constraint",
+    "rowCount": 90,
+    "yes": 90,
+    "no": 0,
+    "rows": [
+      {
+        "name": "CK_Person_EmailPromotion",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Person_PersonType", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_SalesTaxRate_TaxType", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_SalesTerritory_SalesYTD",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesTerritory_SalesLastYear",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_Product_SafetyStockLevel",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesTerritory_CostYTD",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Product_ReorderPoint", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_SalesTerritory_CostLastYear",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Product_StandardCost", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Product_ListPrice", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Product_Weight", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_Product_DaysToManufacture",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesTerritoryHistory_EndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Product_ProductLine", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Product_Class", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Product_Style", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Product_SellEndDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_ProductCostHistory_EndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_ShipMethod_ShipBase", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_ProductCostHistory_StandardCost",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_ShipMethod_ShipRate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_ShoppingCartItem_Quantity",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_ProductInventory_Shelf",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_ProductInventory_Bin", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_SpecialOffer_EndDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_SpecialOffer_DiscountPct",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_SpecialOffer_MinQty", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_ProductListPriceHistory_EndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_SpecialOffer_MaxQty", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_ProductListPriceHistory_ListPrice",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_BillOfMaterials_EndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_BillOfMaterials_ProductAssemblyID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_BillOfMaterials_BOMLevel",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_BillOfMaterials_PerAssemblyQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_TransactionHistory_TransactionType",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_ProductReview_Rating", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_TransactionHistoryArchive_TransactionType",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_ProductVendor_AverageLeadTime",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_ProductVendor_StandardPrice",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_ProductVendor_LastReceiptCost",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_ProductVendor_MinOrderQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_ProductVendor_MaxOrderQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Vendor_CreditRating", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_ProductVendor_OnOrderQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_WorkOrder_OrderQty", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_PurchaseOrderDetail_OrderQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_WorkOrder_ScrappedQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderDetail_UnitPrice",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_WorkOrder_EndDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_PurchaseOrderDetail_ReceivedQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderDetail_RejectedQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_WorkOrderRouting_ScheduledEndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_WorkOrderRouting_ActualEndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_WorkOrderRouting_ActualResourceHrs",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_WorkOrderRouting_PlannedCost",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_WorkOrderRouting_ActualCost",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderHeader_Status",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderHeader_ShipDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderHeader_SubTotal",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderHeader_TaxAmt",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_PurchaseOrderHeader_Freight",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Document_Status", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_SalesOrderDetail_OrderQty",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderDetail_UnitPrice",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderDetail_UnitPriceDiscount",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Employee_BirthDate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_Employee_MaritalStatus",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_Employee_HireDate", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Employee_Gender", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_Employee_VacationHours",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderHeader_Status",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_Employee_SickLeaveHours",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderHeader_DueDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderHeader_ShipDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderHeader_SubTotal",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_EmployeeDepartmentHistory_EndDate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderHeader_TaxAmt",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesOrderHeader_Freight",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_EmployeePayHistory_PayFrequency",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_EmployeePayHistory_Rate",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK__employee__gender__6F1576F7",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesPerson_SalesQuota",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_SalesPerson_Bonus", "hasspecialcharsorlongname": "yes" },
+      { "name": "CK_Location_CostRate", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_SalesPerson_CommissionPct",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_Location_Availability",
+        "hasspecialcharsorlongname": "yes"
+      },
+      { "name": "CK_SalesPerson_SalesYTD", "hasspecialcharsorlongname": "yes" },
+      {
+        "name": "CK_SalesPerson_SalesLastYear",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "CK_SalesPersonQuotaHistory_SalesQuota",
+        "hasspecialcharsorlongname": "yes"
+      }
+    ]
+  },
+  {
+    "label": "sql_trigger",
+    "rowCount": 10,
+    "yes": 0,
+    "no": 10,
+    "rows": [
+      { "name": "uSalesOrderHeader", "hasspecialcharsorlongname": "no" },
+      { "name": "dVendor", "hasspecialcharsorlongname": "no" },
+      { "name": "iWorkOrder", "hasspecialcharsorlongname": "no" },
+      { "name": "uWorkOrder", "hasspecialcharsorlongname": "no" },
+      { "name": "dEmployee", "hasspecialcharsorlongname": "no" },
+      { "name": "iuPerson", "hasspecialcharsorlongname": "no" },
+      { "name": "iPurchaseOrderDetail", "hasspecialcharsorlongname": "no" },
+      { "name": "uPurchaseOrderDetail", "hasspecialcharsorlongname": "no" },
+      { "name": "uPurchaseOrderHeader", "hasspecialcharsorlongname": "no" },
+      { "name": "iduSalesOrderDetail", "hasspecialcharsorlongname": "no" }
+    ]
+  },
+  {
+    "label": "sql_table_valued_function",
+    "rowCount": 1,
+    "yes": 0,
+    "no": 1,
+    "rows": [
+      { "name": "ufnGetContactInformation", "hasspecialcharsorlongname": "no" }
+    ]
+  },
+  {
+    "label": "foreign_key_constraint",
+    "rowCount": 90,
+    "yes": 90,
+    "no": 0,
+    "rows": [
+      {
+        "name": "FK_Address_StateProvince_StateProvinceID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BillOfMaterials_Product_ProductAssemblyID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BillOfMaterials_Product_ComponentID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BillOfMaterials_UnitMeasure_UnitMeasureCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BusinessEntityAddress_Address_AddressID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BusinessEntityAddress_AddressType_AddressTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BusinessEntityAddress_BusinessEntity_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BusinessEntityContact_Person_PersonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BusinessEntityContact_ContactType_ContactTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_BusinessEntityContact_BusinessEntity_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_CountryRegionCurrency_CountryRegion_CountryRegionCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_CountryRegionCurrency_Currency_CurrencyCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_CurrencyRate_Currency_FromCurrencyCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_CurrencyRate_Currency_ToCurrencyCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Customer_Person_PersonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Customer_Store_StoreID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Customer_SalesTerritory_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Document_Employee_Owner",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_EmailAddress_Person_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Employee_Person_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_EmployeeDepartmentHistory_Department_DepartmentID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_EmployeeDepartmentHistory_Employee_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_EmployeeDepartmentHistory_Shift_ShiftID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_EmployeePayHistory_Employee_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_JobCandidate_Employee_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Password_Person_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Person_BusinessEntity_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PersonCreditCard_Person_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PersonCreditCard_CreditCard_CreditCardID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PersonPhone_Person_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PersonPhone_PhoneNumberType_PhoneNumberTypeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Product_UnitMeasure_SizeUnitMeasureCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Product_UnitMeasure_WeightUnitMeasureCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Product_ProductModel_ProductModelID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Product_ProductSubcategory_ProductSubcategoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductCostHistory_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductDocument_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductDocument_Document_DocumentNode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductInventory_Location_LocationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductInventory_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductListPriceHistory_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductModelIllustration_ProductModel_ProductModelID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductModelIllustration_Illustration_IllustrationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductModelProductDescriptionCulture_ProductDescription_ProductDescriptionID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductModelProductDescriptionCulture_Culture_CultureID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductModelProductDescriptionCulture_ProductModel_ProductModelID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductProductPhoto_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductProductPhoto_ProductPhoto_ProductPhotoID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductReview_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductSubcategory_ProductCategory_ProductCategoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductVendor_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductVendor_UnitMeasure_UnitMeasureCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ProductVendor_Vendor_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PurchaseOrderDetail_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PurchaseOrderDetail_PurchaseOrderHeader_PurchaseOrderID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PurchaseOrderHeader_Employee_EmployeeID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PurchaseOrderHeader_Vendor_VendorID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_PurchaseOrderHeader_ShipMethod_ShipMethodID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderDetail_SalesOrderHeader_SalesOrderID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderDetail_SpecialOfferProduct_SpecialOfferIDProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_Address_BillToAddressID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_Address_ShipToAddressID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_CreditCard_CreditCardID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_CurrencyRate_CurrencyRateID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_Customer_CustomerID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_SalesPerson_SalesPersonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_ShipMethod_ShipMethodID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeader_SalesTerritory_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeaderSalesReason_SalesReason_SalesReasonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesOrderHeaderSalesReason_SalesOrderHeader_SalesOrderID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesPerson_Employee_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesPerson_SalesTerritory_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesPersonQuotaHistory_SalesPerson_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesTaxRate_StateProvince_StateProvinceID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesTerritory_CountryRegion_CountryRegionCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesTerritoryHistory_SalesPerson_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SalesTerritoryHistory_SalesTerritory_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_ShoppingCartItem_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SpecialOfferProduct_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_SpecialOfferProduct_SpecialOffer_SpecialOfferID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_StateProvince_CountryRegion_CountryRegionCode",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_StateProvince_SalesTerritory_TerritoryID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Store_BusinessEntity_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Store_SalesPerson_SalesPersonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_TransactionHistory_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_Vendor_BusinessEntity_BusinessEntityID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_WorkOrder_Product_ProductID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_WorkOrder_ScrapReason_ScrapReasonID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_WorkOrderRouting_Location_LocationID",
+        "hasspecialcharsorlongname": "yes"
+      },
+      {
+        "name": "FK_WorkOrderRouting_WorkOrder_WorkOrderID",
+        "hasspecialcharsorlongname": "yes"
+      }
+    ]
+  },
+  {
+    "label": "user_table",
+    "rowCount": 80,
+    "yes": 0,
+    "no": 80,
+    "rows": [
+      { "name": "SalesTaxRate", "hasspecialcharsorlongname": "no" },
+      { "name": "PersonCreditCard", "hasspecialcharsorlongname": "no" },
+      { "name": "PersonPhone", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesTerritory", "hasspecialcharsorlongname": "no" },
+      { "name": "PhoneNumberType", "hasspecialcharsorlongname": "no" },
+      { "name": "Product", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesTerritoryHistory", "hasspecialcharsorlongname": "no" },
+      { "name": "ScrapReason", "hasspecialcharsorlongname": "no" },
+      { "name": "Shift", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductCategory", "hasspecialcharsorlongname": "no" },
+      { "name": "ShipMethod", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductCostHistory", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductDescription", "hasspecialcharsorlongname": "no" },
+      { "name": "ShoppingCartItem", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductDocument", "hasspecialcharsorlongname": "no" },
+      { "name": "DatabaseLog", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductInventory", "hasspecialcharsorlongname": "no" },
+      { "name": "SpecialOffer", "hasspecialcharsorlongname": "no" },
+      { "name": "ErrorLog", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductListPriceHistory", "hasspecialcharsorlongname": "no" },
+      { "name": "Address", "hasspecialcharsorlongname": "no" },
+      { "name": "SpecialOfferProduct", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductModel", "hasspecialcharsorlongname": "no" },
+      { "name": "AddressType", "hasspecialcharsorlongname": "no" },
+      { "name": "StateProvince", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductModelIllustration", "hasspecialcharsorlongname": "no" },
+      { "name": "AWBuildVersion", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "ProductModelProductDescriptionCulture",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "BillOfMaterials", "hasspecialcharsorlongname": "no" },
+      { "name": "Store", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductPhoto", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductProductPhoto", "hasspecialcharsorlongname": "no" },
+      { "name": "TransactionHistory", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductReview", "hasspecialcharsorlongname": "no" },
+      { "name": "BusinessEntity", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "TransactionHistoryArchive",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "ProductSubcategory", "hasspecialcharsorlongname": "no" },
+      { "name": "BusinessEntityAddress", "hasspecialcharsorlongname": "no" },
+      { "name": "ProductVendor", "hasspecialcharsorlongname": "no" },
+      { "name": "BusinessEntityContact", "hasspecialcharsorlongname": "no" },
+      { "name": "UnitMeasure", "hasspecialcharsorlongname": "no" },
+      { "name": "emp", "hasspecialcharsorlongname": "no" },
+      { "name": "Vendor", "hasspecialcharsorlongname": "no" },
+      { "name": "ContactType", "hasspecialcharsorlongname": "no" },
+      { "name": "dept", "hasspecialcharsorlongname": "no" },
+      { "name": "empdept", "hasspecialcharsorlongname": "no" },
+      { "name": "CountryRegionCurrency", "hasspecialcharsorlongname": "no" },
+      { "name": "test2", "hasspecialcharsorlongname": "no" },
+      { "name": "test2", "hasspecialcharsorlongname": "no" },
+      { "name": "CountryRegion", "hasspecialcharsorlongname": "no" },
+      { "name": "WorkOrder", "hasspecialcharsorlongname": "no" },
+      { "name": "PurchaseOrderDetail", "hasspecialcharsorlongname": "no" },
+      { "name": "CreditCard", "hasspecialcharsorlongname": "no" },
+      { "name": "Culture", "hasspecialcharsorlongname": "no" },
+      { "name": "WorkOrderRouting", "hasspecialcharsorlongname": "no" },
+      { "name": "Currency", "hasspecialcharsorlongname": "no" },
+      { "name": "test1", "hasspecialcharsorlongname": "no" },
+      { "name": "PurchaseOrderHeader", "hasspecialcharsorlongname": "no" },
+      { "name": "CurrencyRate", "hasspecialcharsorlongname": "no" },
+      { "name": "Customer", "hasspecialcharsorlongname": "no" },
+      { "name": "Department", "hasspecialcharsorlongname": "no" },
+      { "name": "Document", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesOrderDetail", "hasspecialcharsorlongname": "no" },
+      { "name": "EmailAddress", "hasspecialcharsorlongname": "no" },
+      { "name": "Employee", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesOrderHeader", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "EmployeeDepartmentHistory",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "EmployeePayHistory", "hasspecialcharsorlongname": "no" },
+      {
+        "name": "SalesOrderHeaderSalesReason",
+        "hasspecialcharsorlongname": "no"
+      },
+      { "name": "employee", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesPerson", "hasspecialcharsorlongname": "no" },
+      { "name": "Illustration", "hasspecialcharsorlongname": "no" },
+      { "name": "JobCandidate", "hasspecialcharsorlongname": "no" },
+      { "name": "test4", "hasspecialcharsorlongname": "no" },
+      { "name": "Location", "hasspecialcharsorlongname": "no" },
+      { "name": "test5", "hasspecialcharsorlongname": "no" },
+      { "name": "Password", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesPersonQuotaHistory", "hasspecialcharsorlongname": "no" },
+      { "name": "Person", "hasspecialcharsorlongname": "no" },
+      { "name": "SalesReason", "hasspecialcharsorlongname": "no" }
+    ]
+  },
+  {
+    "label": "schemas",
+    "rowCount": 6,
+    "yes": 0,
+    "no": 6,
+    "rows": [
+      { "name": "dbo", "hasspecialcharsorlongname": "no" },
+      { "name": "HumanResources", "hasspecialcharsorlongname": "no" },
+      { "name": "Person", "hasspecialcharsorlongname": "no" },
+      { "name": "Production", "hasspecialcharsorlongname": "no" },
+      { "name": "Purchasing", "hasspecialcharsorlongname": "no" },
+      { "name": "Sales", "hasspecialcharsorlongname": "no" }
+    ]
+  }
+]

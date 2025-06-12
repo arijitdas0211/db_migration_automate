@@ -1,27 +1,24 @@
 {
   "name": "frontend",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@fontsource/roboto": "^5.2.5",
-    "@mui/icons-material": "^7.1.0",
-    "@mui/material": "^7.1.0",
-    "@mui/x-data-grid": "^8.5.0",
-    "@toolpad/core": "^0.15.0",
     "axios": "^1.9.0",
-    "file-saver": "^2.0.5",
+    "bootstrap": "5.3.6",
+    "datatables.net-bs5": "^2.3.2",
+    "datatables.net-react": "^1.0.1",
+    "datatables.net-responsive-dt": "^3.0.4",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router-dom": "^7.6.1",
+    "react-router-dom": "^7.6.2",
+    "react-toastify": "^11.0.5",
     "xlsx": "^0.18.5"
   },
   "devDependencies": {

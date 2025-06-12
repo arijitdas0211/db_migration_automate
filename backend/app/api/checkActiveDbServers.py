@@ -85,4 +85,3 @@ class CheckServer:
             'host': host,
             'services': db_services
         }
-

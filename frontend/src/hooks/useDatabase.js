@@ -14,8 +14,7 @@ export function useDatabase() {
   const [servers, setServers] = useState([]);
   const [error, setError] = useState("");
   const [connected, setConnected] = useState(false);
-  const [connecting, setConnecting] = useState(false);
-  
+
   // Fetch servers on mount
   useEffect(() => {
     const fetchServers = async () => {
@@ -24,15 +23,15 @@ export function useDatabase() {
         setServers(response.data.data);
         setError("");
       } catch (err) {
-        const errorMessage = err.response?.data?.error || err.message || "Failed to fetch servers";
+        const errorMessage =
+          err.response?.data?.error || err.message || "Failed to fetch servers";
         setError(errorMessage);
         console.error("Error fetching servers:", errorMessage);
       }
     };
-    
+
     fetchServers();
   }, []);
-
 
   const [queryData, setQueryData] = useState([]);
 
@@ -42,17 +41,19 @@ export function useDatabase() {
       return;
     }
 
-    setConnecting(true);
     setError("");
 
     try {
-      const response = await axios.post(`${API_BASE_URL}/servers/activedb/connection-and-assessment/`, {
-        host: form.host,
-        database: form.database,
-        username: form.username,
-        password: form.password,
-        type: form.server,
-      });
+      const response = await axios.post(
+        `${API_BASE_URL}/servers/activedb/connection-and-assessment/`,
+        {
+          host: form.host,
+          database: form.database,
+          username: form.username,
+          password: form.password,
+          type: form.server,
+        }
+      );
 
       if (response.data.success) {
         setConnected(true);
@@ -64,11 +65,10 @@ export function useDatabase() {
         alert("Connection failed: " + errorMsg);
       }
     } catch (err) {
-      const errorMessage = err.response?.data?.error || err.message || "Connection failed";
+      const errorMessage =
+        err.response?.data?.error || err.message || "Connection failed";
       setError(errorMessage);
       alert("Connection failed: " + errorMessage);
-    } finally {
-      setConnecting(false);
     }
   };
 
@@ -90,10 +90,8 @@ export function useDatabase() {
     servers,
     error,
     connected,
-    connecting,
     handleConnect,
     handleDisconnect,
-    queryData
+    queryData,
   };
 }
-
