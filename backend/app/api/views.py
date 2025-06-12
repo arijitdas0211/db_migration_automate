@@ -2,16 +2,15 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
 from .checkActiveDbServers import CheckServer
-import pymysql, psycopg2, pymongo, pyodbc
-# Validation queries
 from .queries import Queries
 from django.views.decorators.csrf import ensure_csrf_cookie
 from django.http import JsonResponse
+import pyodbc
+
 
 @ensure_csrf_cookie
 def get_csrf_token(request):
     return JsonResponse({'message': 'CSRF cookie set'})
-
 
 
 @api_view(['GET'])
@@ -19,7 +18,7 @@ def check_active_db_servers(request):
     checker = CheckServer()
     results = []
 
-    # Optional: accept hosts from query param, else use default
+    # Use default host list
     hosts = checker.HOSTS_TO_CHECK
 
     for host in hosts:
@@ -28,7 +27,6 @@ def check_active_db_servers(request):
             if result:
                 results.append(result)
         except Exception as e:
-            # In case one host check fails, continue with others but log error
             results.append({
                 'host': host,
                 'services': [],
@@ -57,41 +55,21 @@ def validate_and_assess(request):
     username = data.get("username")
     password = data.get("password")
     db_type = data.get("type")
-    
-    # DRF Test Data:
-    '''
-    {
-        "host": "localhost",
-        "database": "AdventureWorks2016",
-        "username": "sa",
-        "password": "1234",
-        "type": "SQL Server"
-    }
-    '''
+
+    # Example input:
+    # {
+    #   "host": "localhost",
+    #   "database": "AdventureWorks2016",
+    #   "username": "sa",
+    #   "password": "1234",
+    #   "type": "SQL Server"
+    # }
 
     try:
-        conn = None
-        if db_type == "MySQL":
-            conn = pymysql.connect(host=host, user=username, password=password, database=db)
-        elif db_type == "PostgreSQL":
-            conn = psycopg2.connect(host=host, user=username, password=password, dbname=db)
-        elif db_type == "MongoDB":
-            conn = pymongo.MongoClient(f"mongodb://{username}:{password}@{host}/{db}", serverSelectionTimeoutMS=3000)
-            conn.server_info()  # trigger connection
-            return Response({ "success": True, "message": "MongoDB credentials validated." })
-        elif db_type == "SQL Server":
-            conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={host};DATABASE={db};UID={username};PWD={password}"
-            conn = pyodbc.connect(conn_str)
-        else:
-            return Response({ "success": False, "error": "Unsupported DB type" }, status=400)
-
-        # For non-SQL Server DBs, just return success after validation
-        if db_type != "SQL Server":
-            conn.close()
-            return Response({ "success": True, "message": f"{db_type} credentials validated." })
-
-        # --- SQL Server Assessment Starts ---
+        conn_str = f"DRIVER={{ODBC Driver 17 for SQL Server}};SERVER={host};DATABASE={db};UID={username};PWD={password}"
+        conn = pyodbc.connect(conn_str)
         cursor = conn.cursor()
+
         output = []
 
         for q in Queries.sql_server_to_postgres():
@@ -99,20 +77,19 @@ def validate_and_assess(request):
                 cursor.execute(q["query"])
                 columns = [desc[0].lower() for desc in cursor.description]
                 rows = cursor.fetchall()
-                data = [dict(zip(columns, row)) for row in rows]
+                data_rows = [dict(zip(columns, row)) for row in rows]
 
-                yes_count = sum(1 for row in data if row.get("hasspecialcharsorlongname") == "yes")
-                no_count = sum(1 for row in data if row.get("hasspecialcharsorlongname") == "no")
+                yes_count = sum(1 for row in data_rows if row.get("hasspecialcharsorlongname") == "yes")
+                no_count = sum(1 for row in data_rows if row.get("hasspecialcharsorlongname") == "no")
 
                 output.append({
                     "label": q["label"],
-                    "rowCount": len(data),
+                    "rowCount": len(data_rows),
                     "yes": yes_count,
                     "no": no_count,
-                    "rows": data
+                    "rows": data_rows
                 })
             except Exception as qe:
-                print(f"Query error for '{q['label']}': {qe}")
                 output.append({
                     "label": q["label"],
                     "error": str(qe),
@@ -132,10 +109,4 @@ def validate_and_assess(request):
         })
 
     except Exception as e:
-        print(f"Database error: {e}")
         return Response({ "success": False, "error": str(e) }, status=500)
-
-
-
-
-

@@ -26,13 +26,15 @@ export default function MainContainer() {
           )}
 
           {/* Status Cards Row */}
-          <StatusCards />
+          {/* <StatusCards /> */}
 
-          {/* Database Objects Summary */}
-          <DBObjectsSummary />
 
           {/* Migration Analysis */}
           <MigrationAnalysis />
+
+
+          {/* Database Objects Summary */}
+          <DBObjectsSummary />
         </div>
       </div>
     </>
